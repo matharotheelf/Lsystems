@@ -1,8 +1,22 @@
 #include "ofApp.h"
+ofPolyline line;
+
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+}
 
+void ofApp::drawBranch(int iterationsLeft, float lineLength){
+    ofDrawLine(0,0,0,-lineLength);
+    if(iterationsLeft > 0){
+        ofTranslate(0, -lineLength);
+        ofRotateDeg(30);
+        drawBranch(iterationsLeft - 1, lineLength/1.3);
+        ofRotateDeg(-60);
+        drawBranch(iterationsLeft - 1, lineLength/1.3);
+        ofRotateDeg(30);
+        ofTranslate(0, lineLength);
+    }
 }
 
 //--------------------------------------------------------------
@@ -12,7 +26,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+    ofTranslate(ofGetWidth()/2, ofGetHeight());
+    drawBranch(12, 100);
 }
 
 //--------------------------------------------------------------

@@ -22,5 +22,6 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h) override;
 		void dragEvent(ofDragInfo dragInfo) override;
 		void gotMessage(ofMessage msg) override;
+        void drawBranch(int iterationsLeft, float lineLength);
 		
 };
