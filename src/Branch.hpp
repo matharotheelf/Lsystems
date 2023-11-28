@@ -13,21 +13,16 @@
 
 #endif /* Branch_hpp */
 
-
 class Branch{
     public:
-        Branch(float cLength, float cAngle, int cChildGenerations, ofVec2f cBasePosition,
+        Branch(float cLength, float cAngle, int generationNumber, ofVec2f cBasePosition,
         ofVec2f cEndPosition, ofVec2f cBaseDirection);
         float length;
         float angle;
-        int childGenerations;
+        int generationNumber;
         ofVec2f basePosition;
         ofVec2f endPosition;
         ofVec2f baseDirection;
-        std::vector<Branch> childBranches;
         void Draw();
-    private:
-        void DrawChildren();
-        void GenerateChildren();
-    
+        vector<Branch *> GenerateChildren();
 };

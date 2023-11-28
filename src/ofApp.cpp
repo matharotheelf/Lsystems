@@ -3,36 +3,25 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    tree.GenerateRoot();
+    tree.GenerateGeneration(1);
+    tree.GenerateGeneration(2);
+    tree.GenerateGeneration(3);
+    tree.GenerateGeneration(4);
+    tree.GenerateGeneration(5);
+    tree.GenerateGeneration(6);
+    tree.GenerateGeneration(7);
+    tree.GenerateGeneration(8);
+    tree.GenerateGeneration(9);
+    tree.GenerateGeneration(10);
 }
 
-//void ofApp::drawBranch(int iterationsLeft, float lineLength){
-//    ofTranslate(-ofGetWidth()/2, -ofGetHeight());
-//    float lengthRatio = ofGetWidth()/(ofGetMouseX() + 1);
-//    float angle = 90 * ofGetMouseY()/ofGetHeight();
-//    ofTranslate(ofGetWidth()/2, ofGetHeight());
-//
-//    ofDrawLine(0,0,0,-lineLength);
-//    if(iterationsLeft > 0){
-//        ofTranslate(0, -lineLength);
-//        ofRotateDeg(angle);
-//        drawBranch(iterationsLeft - 1, lineLength/lengthRatio);
-//        ofRotateDeg(-2*angle);
-//        drawBranch(iterationsLeft - 1, lineLength/lengthRatio);
-//        ofRotateDeg(angle);
-//        ofTranslate(0, lineLength);
-//    }
-//}
-
-//--------------------------------------------------------------
 void ofApp::update(){
-
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofTranslate(ofGetWidth()/2, ofGetHeight());
-//    drawBranch(5, 100);
-    rootBranch.Draw();
+    tree.DrawTree();
 }
 
 //--------------------------------------------------------------

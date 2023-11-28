@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Branch.hpp"
+#include "Tree.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -10,5 +11,5 @@ class ofApp : public ofBaseApp{
 		void update() override;
 		void draw() override;
         void exit() override;
-        Branch rootBranch = Branch(100, 30, 5, ofVec2f(0, 0), ofVec2f(0,-100), ofVec2f(0,-1));
+        Tree tree = Tree(ofVec2f(512,768), 200, 30, 4);
 };
